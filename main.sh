@@ -33,10 +33,6 @@ parse() {
   	exit 0
 }
 
-echo ${BASH_SOURCE[@]}
-echo hello
-
-
 if [[ "${BASH_SOURCE[0]}" != "$0" ]]; then
 	parse
 fi
