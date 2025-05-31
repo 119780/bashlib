@@ -1,7 +1,5 @@
 #!/bin/bash
 
-src=$(dirname "$0")
-
 parser() {
 	local parsed=""
 	
@@ -34,6 +32,8 @@ parse() {
   	awk -v lib="$(basename "${BASH_SOURCE[0]}")" '!($0 ~ "^source .*" lib "$")' "${BASH_SOURCE[2]}" | parser
   	exit 0
 }
+
+echo ${BASH_SOURCE[@]}
 
 if [[ "${BASH_SOURCE[0]}" != "$0" ]]; then
 	parse
